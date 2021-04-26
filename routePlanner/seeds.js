@@ -1,6 +1,14 @@
 const mongoose = require('mongoose');
 const Trip = require('./models/Trip');
 
+//setting connection line
+const MONGO_URI = process.env.MONGODB_URI || "mongodb://localhost/route-planner";
+
+//setting up connection to mongo
+mongoose.connect(MONGO_URI,{
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
 
 // initial trips
 const trips = [
@@ -107,3 +115,9 @@ const trips = [
 ];
 
 // seeding the database
+
+Trip.insertMany(trips)
+    .then(trip => {
+        console.log(trip);
+        mongoose.connection.close();
+    });
