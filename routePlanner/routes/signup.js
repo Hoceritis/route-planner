@@ -3,12 +3,15 @@ const User = require('../models/User.model');
 const bcrypt = require('bcrypt');
 
 router.post('/signup', (req,res,next) => {
+  console.log('test')
   const {username, password} = req.body
-  if(password.length < 8) {
-    res.render('signup', {message : 'Your password should be longer than 8 characters'})
+  if(password.length <= 7) {
+    res.render('signup', {message : 'Your password should be longer than 7 characters'})
+    return
   }
   if (username === '') {
     res.render('signup', {message : 'Your username cannot be empty'})
+    return
   }
   User.findOne({username : username})
   .then(dataFromDB => {
@@ -17,12 +20,11 @@ router.post('/signup', (req,res,next) => {
     } else {
       const salt = bcrypt.genSaltSync();
       const hash = bcrypt.hashSync(password, salt);
-      User.create({username : username, password : salt})
-      .then(newUser => {
+      User.create({username : username, password : hash})
         res.redirect('/')
-      })
     }
   })
+  .catch(error => next(error));
 })
 
 module.exports = router;
