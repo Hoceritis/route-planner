@@ -5,7 +5,7 @@ const tripSchema = new Schema({
     Description: String,
     Distance: Number,
     District: String,
-    Adress: String,
+    Address: String,
     Picture: {
         type: String,
         default: 'https://res.cloudinary.com/chocogrenouille/image/upload/v1619439475/Route%20Planner/addpicture_r5ymge.png'
@@ -18,5 +18,4 @@ const tripSchema = new Schema({
 });
 
 const Trip = model("Trip", tripSchema);
-
 module.exports = Trip;
