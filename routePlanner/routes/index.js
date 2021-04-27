@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const Trip = require('../models/Trip');
 const User = require('../models/User.model');
 
 //middlewear
@@ -14,7 +15,14 @@ const loginCheck = () => {
 
 /* GET home page */
 router.get("/", (req, res, next) => {
-  res.render("index");
+  Trip.find()
+  .then(trips => {
+    console.log(trips);
+    res.render("index", {trips})
+  })
+  .catch(err => {
+    next(err);
+  })
 });
 
 router.get('/signup', (req,res,next) => {
