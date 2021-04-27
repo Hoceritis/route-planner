@@ -26,7 +26,8 @@ router.get('/login', (req,res,next) => {
 })
 
 router.get('/profile', loginCheck(), (req,res,next) => {
-    res.render('profile')
+    let user = req.session.user
+    res.render('profile', {user})
   })
 
 module.exports = router;
