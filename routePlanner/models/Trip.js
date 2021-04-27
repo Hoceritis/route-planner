@@ -14,8 +14,16 @@ const tripSchema = new Schema({
         type: String,
         enum: ['Hike', 'Bike']
     },
-    Map: [Number]
+    location: {
+        type: {
+            type: String
+        },
+        coordinates: [Number]
+    }
 });
+
+//supports queries that calculate geometries on an Earth-like sphere - Necessary!
+tripSchema.index({ location: '2dsphere' });
 
 const Trip = model("Trip", tripSchema);
 module.exports = Trip;
