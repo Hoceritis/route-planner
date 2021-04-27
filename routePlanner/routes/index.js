@@ -22,6 +22,8 @@ router.get("/", (req, res, next) => {
   .catch(err => {
     next(err);
   })
+  .then(trips => res.render("index", {trips}))
+  .catch(err => next(err))
 });
 
 router.get('/signup', (req,res,next) => {
@@ -52,6 +54,19 @@ router.get('/profile', (req,res,next) => {
   let user = req.session.user
   User.findById(user._id).populate('favorite')
   .then(user => {
+router.get('/details/:id', (req, res, next) => {
+  Trip.findById(req.params.id)
+  .then(trip => res.render('details', {trip}))
+})
+
+//This will get me the data/coordinates from the database
+router.get('/get-data', (req, res, next) => {
+  Trip.find()
+  .then(data => res.json(data))
+});
+
+router.get('/profile', loginCheck(), (req,res,next) => {
+    let user = req.session.user
     res.render('profile', {user})
   })
 })

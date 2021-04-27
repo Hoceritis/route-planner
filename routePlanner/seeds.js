@@ -20,7 +20,10 @@ const trips = [
         Address: 'S-Bahn Station Hirschgarten',
         Picture: 'https://res.cloudinary.com/chocogrenouille/image/upload/v1619433648/Route%20Planner/erpetal_gt3jwd.jpg',
         Mode: 'Hike',
-        Map: [52.45813934334384, 13.602637484284998]
+        location: {
+            type: 'Point',
+            coordinates: [52.45813934334384, 13.602637484284998]
+        }
     },
     {
         title: 'Stralau',
@@ -30,7 +33,10 @@ const trips = [
         Address: 'S-Bahn Station Rummelsburg',
         Picture: 'https://res.cloudinary.com/chocogrenouille/image/upload/v1619433649/Route%20Planner/stralau_cqqyvu.jpg',
         Mode: 'Hike',
-        Map: [52.501558036754155, 13.478236068942918]
+        location: {
+            type: 'Point',
+            coordinates: [52.501558036754155, 13.478236068942918]
+        }
     },
     {
         title: 'Naturpark Südgelände',
@@ -40,7 +46,10 @@ const trips = [
         Address: 'Prellerweg 47-49, 12157 Berlin',
         Picture: 'https://res.cloudinary.com/chocogrenouille/image/upload/v1619433649/Route%20Planner/naturpark_exjlzc.jpg',
         Mode: 'Hike',
-        Map: [52.45920595244466, 13.358197607036761]
+        location: {
+            type: 'Point',
+            coordinates: [52.45920595244466, 13.358197607036761]
+        }
     },
     {
         title: 'Pfaueninsel',
@@ -50,7 +59,10 @@ const trips = [
         Address: 'S-Bahn Station Wannsee',
         Picture: 'https://res.cloudinary.com/chocogrenouille/image/upload/v1619433647/Route%20Planner/pfaueninsel_pnv9dr.jpg',
         Mode: 'Hike',
-        Map: [52.42148045323667, 13.178954795923493]
+        location: {
+            type: 'Point',
+            coordinates: [52.42148045323667, 13.178954795923493]
+        }
     },
     {
         title: 'Teltowkanal',
@@ -60,7 +72,10 @@ const trips = [
         Address: 'S-Bahn Station Treptower Park',
         Picture: 'https://res.cloudinary.com/chocogrenouille/image/upload/v1619433649/Route%20Planner/teltowkanal_dxgiol.jpg',
         Mode: 'Bike',
-        Map: [52.49408215581487, 13.461433798110319]
+        location: {
+            type: 'Point',
+            coordinates: [52.49408215581487, 13.461433798110319]
+        } 
     },
     {
         title: 'Sacrow',
@@ -70,7 +85,10 @@ const trips = [
         Address: 'S-Bahn Station Wannsee',
         Picture: 'https://res.cloudinary.com/chocogrenouille/image/upload/v1619433649/Route%20Planner/sacrow_hiszib.jpg',
         Mode: 'Bike',
-        Map: [52.42148045323667, 13.178954795923493]
+        location: {
+            type: 'Point',
+            coordinates: [52.42148045323667, 13.178954795923493]
+        }
     },
     {
         title: 'Eiskeller',
@@ -80,7 +98,10 @@ const trips = [
         Address: 'S-Bahn Station Spandau',
         Picture: 'https://res.cloudinary.com/chocogrenouille/image/upload/v1619433649/Route%20Planner/eiskeller_w2yo3v.png',
         Mode: 'Bike',
-        Map: [52.534689502947664, 13.19793764229167]
+        location: {
+            type: 'Point',
+            coordinates: [52.534689502947664, 13.19793764229167]
+        }
     },
     {
         title: 'Oberhavelsteg',
@@ -90,7 +111,10 @@ const trips = [
         Address: 'S-Bahn Station Karl-Bonhoeffer-Nervenklinik',
         Picture: 'https://res.cloudinary.com/chocogrenouille/image/upload/v1619433650/Route%20Planner/oberhavelsteg_cokjqq.jpg',
         Mode: 'Bike',
-        Map: [52.578808148275634, 13.332817498113887]
+        location: {
+            type: 'Point',
+            coordinates: [52.578808148275634, 13.332817498113887]
+        }
     },
     {
         title: 'Grunewaldloop',
@@ -100,7 +124,10 @@ const trips = [
         Address: 'U-Bahn Station Konstanzer Straße',
         Picture: 'https://res.cloudinary.com/chocogrenouille/image/upload/v1619433650/Route%20Planner/grunewaldloop_ex8cmr.jpg',
         Mode: 'Bike',
-        Map: [52.49415591996668, 13.310055271125922]
+        location: {
+            type: 'Point',
+            coordinates: [52.49415591996668, 13.310055271125922]
+        }
     },
     {
         title: 'Tegler Fließ',
@@ -110,7 +137,10 @@ const trips = [
         Address: 'S-Bahn Station Waidmannslust',
         Picture: 'https://res.cloudinary.com/chocogrenouille/image/upload/v1619433653/Route%20Planner/tegeler-fliess_f7g3pj.jpg',
         Mode: 'Hike',
-        Map: [52.60668755068947, 13.320905526951048]
+        location: {
+            type: 'Point',
+            coordinates: [52.60668755068947, 13.320905526951048]
+        }
     }
 ];
 
