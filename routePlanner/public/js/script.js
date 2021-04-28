@@ -8,11 +8,18 @@ document.addEventListener(
 
 mapboxgl.accessToken = 'pk.eyJ1IjoiY2hvY29ncmVub3VpbGxlIiwiYSI6ImNrbnlxMDhpbjEycHMyd3RnMWx5dW84NmgifQ.jgYkaT23M3Fo965r73i23A';
 
+// // This is the array of coordinates for my markers
+let coordinates = [];
+let longitude = document.getElementById('longitude').innerText;
+let latitude = document.getElementById('latitude').innerText;
+coordinates.push(longitude);
+coordinates.push(latitude);
+
 //creates new mapbox
 const map = new mapboxgl.Map({
   container: 'map', // container ID
   style: 'mapbox://styles/mapbox/streets-v11', // style URL
-  center: [13.602637484284998, 52.45813934334384], // starting position [lng, lat]
+  center: coordinates, // starting position [lng, lat]
   zoom: 12, // starting zoom
   doubleClickZoom: true
 });
@@ -21,28 +28,27 @@ const map = new mapboxgl.Map({
 const nav = new mapboxgl.NavigationControl();
 map.addControl(nav, 'top-left');
 
-const coords = [13.602637484284998, 52.45813934334384]
-
-// This is the array of coordinates for my markers
-let markers = [];
-console.log('first markers: ', markers);
-
 //Gets me the all the coordinates of each route
-axios.get('http://localhost:3000/get-data')
-   .then(results => {
-      const coordinates = [...results.data];
-      coordinates.forEach((coordinate) => {
-        markers.push(coordinate.location.coordinates);
-      })  
-    })
+// axios.get('http://localhost:3000/get-data')
+//    .then(results => {
+//       const coordinates = [...results.data];
+//       coordinates.forEach((coordinate) => {
+//         markers.push(coordinate.location.coordinates);
+//       })
+    // markers.forEach((coords) => {
+    //   new mapboxgl.Marker({
+    //     color: "#000000",
+    //     draggable: true
+    //     }).setLngLat(coords)
+    //     .addTo(map);
+    // }) 
+//     .catch(error => console.log(error))
 
-console.log('2nd markers: ', markers);
-// That one should set markers for each route in database
 
-markers.forEach((coords) => {
-  new mapboxgl.Marker({
-    color: "#000000",
-    draggable: true
-    }).setLngLat(coords)
-    .addTo(map);
-})
+const markers = new mapboxgl.Marker({
+      color: "red",
+      draggable: true
+      }).setLngLat(coordinates)
+      .addTo(map);
+
+    //console.log(window.location)

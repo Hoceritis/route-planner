@@ -4,8 +4,7 @@
 <p>{{Distance}}km</p>
 <img src="{{Picture}}">
 <div>{{Description}}</div>
+<div id="longitude">{{location.coordinates.[1]}}</div>
+<div id="latitude">{{location.coordinates.[0]}}</div>
 <div id="map" style='width: 400px; height: 300px;'></div>
 {{/with}}
-
-<script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
-<link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet' />
