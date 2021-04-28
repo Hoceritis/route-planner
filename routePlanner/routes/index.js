@@ -44,7 +44,7 @@ router.get('/favorite/:id', loginCheck(), (req,res,next) => {
   });
 });
 
-router.get('/profile', (req,res,next) => {
+router.get('/profile', loginCheck(), (req,res,next) => {
   let user = req.session.user
   User.findById(user._id).populate('favorite')
   .then(user => res.render('profile', {user}));
