@@ -16,8 +16,8 @@ coordinates.push(longitude);
 coordinates.push(latitude);
 
 //creates new mapbox
-const map = new mapboxgl.Map({
-  container: 'map', // container ID
+const detailMap = new mapboxgl.Map({
+  container: 'detailMap', // container ID
   style: 'mapbox://styles/mapbox/streets-v11', // style URL
   center: coordinates, // starting position [lng, lat]
   zoom: 12, // starting zoom
@@ -26,7 +26,14 @@ const map = new mapboxgl.Map({
 
 //creates new navigation set
 const nav = new mapboxgl.NavigationControl();
-map.addControl(nav, 'top-left');
+detailMap.addControl(nav, 'top-left');
+
+// adding the markers to each map
+const markers = new mapboxgl.Marker({
+  color: "red",
+  draggable: true
+  }).setLngLat(coordinates)
+  .addTo(detailMap);
 
 //Gets me the all the coordinates of each route
 // axios.get('http://localhost:3000/get-data')
@@ -43,12 +50,5 @@ map.addControl(nav, 'top-left');
     //     .addTo(map);
     // }) 
 //     .catch(error => console.log(error))
-
-
-const markers = new mapboxgl.Marker({
-      color: "red",
-      draggable: true
-      }).setLngLat(coordinates)
-      .addTo(map);
 
     //console.log(window.location)
