@@ -33,7 +33,7 @@ router.get('/login', (req,res,next) => {
 // Adding favourites to your route
 router.get('/favorite/:id', loginCheck(), (req,res,next) => {
   let user = req.session.user._id
-  console.log(user);
+ 
   console.log(req.params);
   User.findByIdAndUpdate(user, {'$push':{'favorite' : req.params.id}})
   .then(() => {
@@ -50,9 +50,29 @@ router.get('/profile', loginCheck(), (req,res,next) => {
   .then(user => res.render('profile', {user}));
 });
 
+// Removing favourites from your profile
+router.get('/favorite-remove/:id', loginCheck(), (req,res,next) => {
+  let user = req.session.user._id
+  console.log(req.params);
+  User.findByIdAndUpdate(user, {'$pull':{'favorite' : req.params.id}})
+  .then(() => {
+    res.redirect('/profile') 
+  })
+  .catch(err => {
+    next(err);
+  });
+});
+
+//accessing route detail from main page
 router.get('/details/:id', (req, res, next) => {
   Trip.findById(req.params.id)
   .then(trip => res.render('details', {trip}))
+})
+
+//accessing route detail from user's page
+router.get('/details-profile/:id', (req, res, next) => {
+  Trip.findById(req.params.id)
+  .then(trip => res.render('details-profile', {trip}))
 })
 
 //This will get me the data/coordinates from the database
