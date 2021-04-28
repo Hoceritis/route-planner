@@ -1,0 +1,52 @@
+<h1>Add a new route</h1>
+
+<form action="/add" method="POST">
+  <label for="Title">Give your route a name:</label>
+  <input type="text" name="title" id="title">
+   <br>
+  <label for="address">Enter address of starting point:</label>
+  <input type="text" name="address" id="address">
+    <br>
+  <label for="district">Which district starts the tour in?</label>
+  <select id="district" name="district">
+    <option value="Reinickendorf">Reinickendorf</option>
+    <option value="Pankow">Pankow</option>
+    <option value="Mitte">Mitte</option>
+    <option value="Charlottenburg-Wilmersdorf">Charlottenburg-Wilmersdorf</option>
+    <option value="Friedrichshain-Kreuzberg">Friedrichshain-Kreuzberg</option>
+    <option value="Lichtenberg">Lichtenberg</option>
+    <option value="Marzahn-Hellersdorf">Marzahn-Hellersdorf</option>
+    <option value="Neukölln">Neukölln</option>
+    <option value="Spandau">Spandau</option>
+    <option value="Steglitz-Zehlendorf">Steglitz-Zehlendorf</option>
+    <option value="Tempelhof-Schöneberg">Tempelhof-Schöneberg</option>
+    <option value="Treptow-Köpenick">Treptow-Köpenick</option>
+  </select>
+    <br>
+  <label for="distance">How long is the tour?</label>
+  <select id="Distance" name="Distance">
+    <option value="10">< 10km</option>
+    <option value="20">10 - 20km</option>
+    <option value="30">20 - 30km</option>
+    <option value="31">> 30km</option>
+  </select>
+    <br>
+  <input type="number" name="distance" id="distance">
+    <br>
+  <label for="mode">Mode:</label>
+  <input type="radio" id="bike" name="Mode" value="bike">
+  <label for="bike">Bike</label>  
+  <input type="radio" id="hike" name="Mode" value="hike">
+  <label for="hike">Hike</label>
+    <br>
+  <label for="location">Enter the geocodes to render a map (longitude & latitude):</label>
+  <input type="number" name="location" id="location" placeholder="longitude">
+  <input type="number" name="location" id="location" placeholder="latitude">
+    <br>
+  <label for="description">Describe the tour and give as much information as possible</label><br>
+  <textarea id="description" name="description" rows="5" cols="30"></textarea>
+    <br>
+  <button type="submit">Submit route</button>
+
+{{!-- add picture, geocodes --}}
+</form>
