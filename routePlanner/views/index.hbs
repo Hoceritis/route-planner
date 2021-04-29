@@ -4,9 +4,18 @@
 <form action="/search" method="POST">
   <label for="District">Choose a district where you want to start:</label>
   <select id="District" name="District">
-    {{#each trips}}
-    <option value="{{this.District}}">{{this.District}}</option>
-    {{/each}}
+    <option value="Reinickendorf">Reinickendorf</option>
+    <option value="Pankow">Pankow</option>
+    <option value="Mitte">Mitte</option>
+    <option value="Charlottenburg-Wilmersdorf">Charlottenburg-Wilmersdorf</option>
+    <option value="Friedrichshain-Kreuzberg">Friedrichshain-Kreuzberg</option>
+    <option value="Lichtenberg">Lichtenberg</option>
+    <option value="Marzahn-Hellersdorf">Marzahn-Hellersdorf</option>
+    <option value="Neukölln">Neukölln</option>
+    <option value="Spandau">Spandau</option>
+    <option value="Steglitz-Zehlendorf">Steglitz-Zehlendorf</option>
+    <option value="Tempelhof-Schöneberg">Tempelhof-Schöneberg</option>
+    <option value="Treptow-Köpenick">Treptow-Köpenick</option>
   </select>
   <br>
   <label for="Distance">Distance:</label>
@@ -18,14 +27,13 @@
     </select>
   <br>
   <p>Mode:</p>
-  <input type="radio" id="bike" name="Mode" value="bike">
+  <input type="radio" id="bike" name="Mode" value="bike" required>
   <label for="bike">Bike</label>  
   <input type="radio" id="hike" name="Mode" value="hike">
   <label for="hike">Hike</label>
     <br>
   <button type="submit">Search</button>
 </form>
-
 
 {{#each trips}}
   <div>
@@ -36,7 +44,6 @@
     <a href="/details/{{id}}">Find out more</a>
   </div>
 {{/each}}
-
 
 <a href='/signup'>Signup</a><br>
 <a href='/login'>Login</a>
