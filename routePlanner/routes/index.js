@@ -30,19 +30,26 @@ router.get('/login', (req,res,next) => {
 });
 
 
-// Adding favourites to your route
+// Adding routes to your profile
 router.get('/favorite/:id', loginCheck(), (req,res,next) => {
-  let user = req.session.user._id
- 
-  console.log(req.params);
-  User.findByIdAndUpdate(user, {'$push':{'favorite' : req.params.id}})
+  let userId = req.session.user._id
+  User.findById(userId)
+  .then(userFromDb => {
+    if(userFromDb.favorite && !userFromDb.favorite.includes(req.params.id)){
+      User.findByIdAndUpdate(userId, {'$push':{'favorite' : req.params.id}})
   .then(() => {
     res.redirect('/profile') 
+  })
+    } else {
+      res.redirect('/profile') 
+      //You could render the same view with additional infos
+    }
   })
   .catch(err => {
     next(err);
   });
 });
+
 
 router.get('/profile', loginCheck(), (req,res,next) => {
   let user = req.session.user
@@ -50,7 +57,7 @@ router.get('/profile', loginCheck(), (req,res,next) => {
   .then(user => res.render('profile', {user}));
 });
 
-// Removing favourites from your profile
+// Removing routes from your profile
 router.get('/favorite-remove/:id', loginCheck(), (req,res,next) => {
   let user = req.session.user._id
   console.log(req.params);
