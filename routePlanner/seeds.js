@@ -149,5 +149,6 @@ const trips = [
 
 Trip.insertMany(trips)
     .then(trip => {
+        console.log(trip);
         mongoose.connection.close();
     });

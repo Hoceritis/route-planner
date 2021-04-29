@@ -1,16 +1,34 @@
-{{#with trip}}
-<h1>{{title}}</h1>
-<p>{{Address}}</p>
-<p>{{Distance}}km</p>
-<img src="{{Picture}}">
-<div>{{Description}}</div>
+<head>
+  <link rel="stylesheet" href="/stylesheets/details.css" />
+</head>
 
+ <nav>
+    <ul>
+      <li><a href='/signup'>Signup</a></li>
+      <li><a href='/login'>Login</a></li>
+    </ul>
+  </nav>
+
+{{#with trip}}
+  <h1>{{title}}</h1>
+  <div class="details-overview">
+    <div class="details-images">
+      <img src="{{Picture}}">
+      <div id="detailMap" style='width: 400px; height: 300px;'></div>
+    </div>
+    <div class="details-information">
+      <h3>Starting point:</h3>
+      <p>{{Address}}</p>
+      <h3>Length:</h3>
+      <p>{{Distance}}km</p>
+      <p>{{Description}}</p>
+      <p class="gap-two"></p>
+      <a href='/favorite/{{this._id}}'>Add to your favorite</a>
+      <a href='/'>Back to all routes</a>
+    </div>
+  </div>
+ 
 <div id="longitude">{{location.coordinates.[1]}}</div>
 <div id="latitude">{{location.coordinates.[0]}}</div>
-<div id="detailMap" style='width: 400px; height: 300px;'></div>
-
-
-<a href='/favorite/{{this._id}}'>Add to your favorite</a><br>
-<a href='/'>Back to main page</a><br>
 
 {{/with}}

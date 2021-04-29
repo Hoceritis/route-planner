@@ -1,0 +1,79 @@
+html{
+  font-size: 16px; 
+}
+
+body {
+  padding: 0px;
+  margin: 0px;
+  background-color: #F2E8CF;
+}
+
+nav{
+  background-color: #386641;
+  padding: 0.4rem;
+}
+
+ul{
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+li > a {
+  text-decoration: none;
+  background-color: #A7C957;
+  padding: 0.5rem 1rem;
+  border-radius: 0.2rem;
+  margin: 1rem; 
+  color: black;
+}
+
+/* This is the details view */
+
+#longitude, #latitude{
+  color: #F2E8CF;
+}
+
+h1{
+  font-size: 3rem;
+  text-align: center;
+}
+
+.details-images > img{
+  width: 400px;
+}
+
+.details-overview{
+  display:flex;
+  margin: 0 10rem;
+}
+
+.details-information{
+  width: 50%;
+  margin-left: 5rem;
+}
+
+.details-information > a {
+  background-color: #A7C957;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+}
+
+.gap-two{
+  height: 0.3rem;
+  background-color: #F2E8CF;
+}
+
+.gap{
+  height: 0.1rem;
+  background-color: #6A994E;
+}
+
+a:hover{
+  background-color: #6A994E;
+}
+
+a:active{
+  background-color: #386641;
+}

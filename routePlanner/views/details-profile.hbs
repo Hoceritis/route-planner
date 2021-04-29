@@ -1,12 +1,32 @@
+<head>
+  <link rel="stylesheet" href="/stylesheets/details.css" />
+</head>
+
+<nav>
+  <ul>
+    <li><a href='/profile'>Back to my profile</a></li>
+  </ul>
+</nav>
+
 {{#with trip}}
-<h1>{{title}}</h1>
-<p>{{Address}}</p>
-<p>{{Distance}}km</p>
-<img src="{{Picture}}">
-<div>{{Description}}</div>
-<div id="longitude">{{location.coordinates.[1]}}</div>
-<div id="latitude">{{location.coordinates.[0]}}</div>
-<div id="detailMap" style='width: 400px; height: 300px;'></div>
-<a href='/favorite-remove/{{this._id}}'>Remove from favorite</a><br>
-<a href='/profile'>Back to profile</a>
+  <h1>{{title}}</h1>
+
+  <div class="details-overview">
+      <div class="details-images">
+        <img src="{{Picture}}" id="img-routes">
+        <div id="detailMap" style='width: 400px; height: 300px;'></div>
+      </div>
+      <div class="details-information">
+        <h3>Starting point:</h3>
+          <p>{{Address}}</p>
+        <h3>Length:</h3>
+          <p>{{Distance}}km</p>
+          <p>{{Description}}</p>
+        <p class="gap-two"></p>
+        <a href='/favorite-remove/{{this._id}}'>Remove from favorite</a><br>
+      </div>
+  </div>
+
+  <div id="longitude">{{location.coordinates.[1]}}</div>
+  <div id="latitude">{{location.coordinates.[0]}}</div>
 {{/with}}

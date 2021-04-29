@@ -1,14 +1,28 @@
+<head>
+    <link rel="stylesheet" href="/stylesheets/auth.css" />
+</head>
 
-<h1>Sign-up page</h1>
-
-<form action='/signup' method='POST'>
-  <label for='username'>Username :</label>
-  <input type='text' id='username'name='username'><br><br>
-  <label for='password'>Password :</label>
-  <input type='password' id='password' name='password'><br><br>
-  <button type='submit'>Sign up</button>
-</form><br>
-{{#if message}}
-<p style='color : red;'>{{message}}</p>
-{{/if}}
-<a href='/'>Back to main page</a>
+<nav>
+  <ul>
+    <li><a href='/'>Main Page</a></li>
+    <li></li>
+  </ul>
+</nav>
+<h1>Signup</h1>
+<div class="authentication">
+  <div class="form">
+    <form action='/signup' method='POST'>
+      <label for='username'>Username :</label>
+      <input type='text' id='username'name='username'><br><br>
+      <label for='password'>Password :</label>
+      <input type='password' id='password' name='password'><br><br>
+      <button type='submit'>Sign up</button>
+    </form>
+    {{#if message}}
+      <p style='color : red;'>{{message}}</p>
+    {{/if}}
+  </div>
+  <div class="img">
+    <img src="https://res.cloudinary.com/chocogrenouille/image/upload/v1619715490/Route%20Planner/login_h0we6w.jpg">
+  </div>
+</div>
