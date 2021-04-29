@@ -1,6 +1,6 @@
 <h1>Add a new route</h1>
 
-<form action="/add" method="POST">
+<form action="/add" method="POST" enctype="multipart/form-data">
   <label for="Title">Give your route a name:</label>
   <input type="text" name="title" id="title">
    <br>
@@ -36,10 +36,11 @@
   <input type="number" name="location" id="location" placeholder="longitude">
   <input type="number" name="location" id="location" placeholder="latitude">
     <br>
-  <label for="description">Describe the tour and give as much information as possible</label><br>
-  <textarea id="description" name="description" rows="5" cols="30"></textarea>
+  <label for ="Picture">Add a picture:</label>
+  <input type="file" name="Picture" id="Picture">
+    <br>
+  <label for="Description">Describe the tour and give as much information as possible</label><br>
+  <textarea id="Description" name="Description" rows="5" cols="30"></textarea>
     <br>
   <button type="submit">Submit route</button>
-
-{{!-- add picture, geocodes --}}
 </form>

@@ -75,7 +75,6 @@ router.get('/details-profile/:id', (req, res, next) => {
   .then(trip => res.render('details-profile', {trip}))
 })
 
-
 //This will get me the data/coordinates from the database
 router.get('/get-data', (req, res, next) => {
   Trip.find()
