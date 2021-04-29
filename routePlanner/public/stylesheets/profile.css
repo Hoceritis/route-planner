@@ -28,61 +28,14 @@ li > a {
   color: black;
 } 
 
-/* This is the landing page */
+/* This is the profile page */
 
-.header{
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(5, 1fr);
-  margin-top: 2rem;
-}
-
-.headline{
-  grid-column: 4 / -1;
-  grid-row: 4/5;
-  background-color: #BC4749;
-  font-size: 2rem;
+h1, h2{
   text-align: center;
-  width: 90%;
-  height: 80%;
-  padding:2.5rem 0rem 0rem 0rem;
-  border: 3px solid #F2E8CF;
 }
 
-.photo{
-  grid-column: 1 / 4;
-  grid-row: 1 / -1; 
-  padding-left: 15rem;
-}
-
-.photo > img{
-  width: 1000px;
-}
-
-img{
-  width: 200px;
-}
-
-.filter-form{
-  display: flex;
-  justify-content: center;
-  margin: 2rem 0rem;
-}
-
-.filter-trips{
-  background: #A7C957;
-  padding: 2rem 1rem;
-  text-align: center;
-  line-height: 2.5rem;
-  border-radius: 1rem;
-  width: 30%;
-}
-
-.filter-trips > button {
-  background-color: #6A994E;
-  padding: 0.5rem 2rem;
-  border-radius: 0.2rem;
-  border: none;
+.photo-overview{
+  margin: 1rem 2rem;
 }
 
 .trips-overview{
@@ -95,12 +48,12 @@ img{
   border-radius: 1rem;
 }
 
-.photo-overview{
-  margin: 1rem 2rem;
-}
-
 .photo-overview > img{
   border: 2px solid #F2E8CF;
+}
+
+img{
+  width: 200px;
 }
 
 .details-overview {
@@ -118,11 +71,6 @@ img{
 .gap{
   height: 0.1rem;
   background-color: #F2E8CF;
-}
-
-.gap-two{
-  height: 0.1rem;
-  background-color: #6A994E;
 }
 
 a:hover{

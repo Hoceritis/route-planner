@@ -1,8 +1,26 @@
-<h1>{{title}} 🚀</h1>
+<head>
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
 
-<p>Get off that sofa and explore:</p>
-<form action="/search" method="POST">
-  <label for="District">Choose a district where you want to start:</label>
+<nav>
+  <ul>
+    <li><a href='/signup'>Signup</a></li>
+    <li><a href='/login'>Login</a></li>
+  </ul>
+</nav>
+
+<div class="header">
+  <div class="photo">
+    <img src="https://res.cloudinary.com/chocogrenouille/image/upload/v1619706230/coverphoto_l72hgv.jpg">
+  </div>
+  <div class="headline">
+    Discover Berlin by bike or foot
+  </div>
+</div>
+
+<div class="filter-form">
+<form action="/search" method="POST" class="filter-trips">
+  <label for="District">What part of Berlin do you want to explore?</label>
   <select id="District" name="District">
     <option value="Reinickendorf">Reinickendorf</option>
     <option value="Pankow">Pankow</option>
@@ -26,7 +44,7 @@
       <option value="31">> 30km</option>
     </select>
   <br>
-  <p>Mode:</p>
+  <label for="Mode">Mode:</label>
   <input type="radio" id="bike" name="Mode" value="bike" required>
   <label for="bike">Bike</label>  
   <input type="radio" id="hike" name="Mode" value="hike">
@@ -34,17 +52,25 @@
     <br>
   <button type="submit">Search</button>
 </form>
+</div>
 
 {{#each trips}}
-  <div>
-    <h3>{{title}}</h3>
-    <p>{{Address}}</p>
-    <p>{{Distance}}km</p>
-    <img src="{{Picture}}" alt="picture of trip">
-    <a href="/details/{{id}}">Find out more</a>
+  <div class="parent-overview">
+    <div class="trips-overview">
+      <div class="photo-overview">
+        <img src="{{Picture}}" alt="picture of trip">
+      </div>
+      <div class="details-overview">
+        <h3>{{title}}</h3>
+        <p><b>Starting point:</b> {{Address}}</p>
+        <p><b>Length of trip:</b> {{Distance}}km</p>
+        <p class="gap-two"></p>
+        <a href="/details/{{id}}">Find out more</a>
+      </div>
+    </div>
   </div>
+  <p class="gap"></p>
 {{/each}}
 
-<a href='/signup'>Signup</a><br>
-<a href='/login'>Login</a>
+
 

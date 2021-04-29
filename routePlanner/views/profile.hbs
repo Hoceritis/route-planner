@@ -1,14 +1,31 @@
+<head>
+    <link rel="stylesheet" href="/stylesheets/profile.css" />
+</head>
+
+<nav>
+  <ul>
+    <li><a href='/'>Back to the trips</a></li>
+    <li><a href='/logout'>Logout</a></li>
+    <li><a href='/add'>Add a new Trip</a></li>
+  </ul>
+</nav>
+
 <h1>Welcome {{user.username}}</h1><br>
-<a href='/'>Back to the main page</a><br>
-<a href='/logout'>Logout</a><br>
-<a href='/add'>Add a new Trip</a>
-<p>Your favorite Trips :</p>
+
+<h2>These are your favourites trips</h2>
 {{#each user.favorite}}
-  <div>
-    <h3>{{title}}</h3>
-    <p>{{Address}}</p>
-    <p>{{Distance}}km</p>
-    <img src="{{Picture}}" alt="picture of trip">
-    <a href="/details-profile/{{id}}">Find out more</a>
+<div class="parent-overview">
+    <div class="trips-overview">
+      <div class="photo-overview">
+        <img src="{{Picture}}">
+      </div>
+    <div class="details-overview">
+      <h3>{{title}}</h3>
+      <p><b>Starting point:</b> {{Address}}</p>
+      <p><b>Length of trip:</b> {{Distance}}km</p>
+      <a href="/details-profile/{{id}}">Find out more</a>
+    </div>
   </div>
+</div>
+  <p class="gap"></p>
 {{/each}}
