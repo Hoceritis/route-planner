@@ -1,4 +1,13 @@
-<h1>Search results</h1>
-{{#each searchResults}}
-  {{distance}}
+<h1>Search results</h1><br>
+
+{{#each filteredRoute}}
+  <div>
+    <h3>{{title}}</h3>
+    <p>{{Address}}</p>
+    <p>{{Distance}}km</p>
+    <img src="{{Picture}}" alt="picture of trip">
+    <a href="/details/{{id}}">Find out more</a>
+  </div>
+  <div id="map"></div>
 {{/each}}
+<a href='/'>Back to main page</a><br>
