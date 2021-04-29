@@ -3,8 +3,8 @@ const Trip = require('./models/Trip');
 require("dotenv/config");
 
 //setting connection line
-const MONGO_URI =  "mongodb://localhost/route-planner";
-//process.env.MONGODB_URI ||
+const MONGO_URI = process.env.MONGODB_URI || "mongodb://localhost/route-planner";
+
 //setting up connection to mongo
 mongoose.connect(MONGO_URI,{
     useNewUrlParser: true,
