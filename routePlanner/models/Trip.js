@@ -23,7 +23,7 @@ const tripSchema = new Schema({
 });
 
 //supports queries that calculate geometries on an Earth-like sphere - Necessary!
-tripSchema.index({ location: '2dsphere' });
+// tripSchema.index({ location: '2dsphere' });
 
 const Trip = model("Trip", tripSchema);
 module.exports = Trip;

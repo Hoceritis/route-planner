@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Trip = require('./models/Trip');
+require("dotenv/config");
 
 //setting connection line
 const MONGO_URI = process.env.MONGODB_URI || "mongodb://localhost/route-planner";
