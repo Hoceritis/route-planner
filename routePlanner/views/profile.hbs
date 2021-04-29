@@ -1,8 +1,7 @@
-
-
 <h1>Welcome {{user.username}}</h1><br>
 <a href='/'>Back to the main page</a><br>
 <a href='/logout'>Logout</a><br>
+<a href='/add'>Add a new Trip</a>
 <p>Your favorite Trips :</p>
 {{#each user.favorite}}
   <div>
@@ -12,5 +11,4 @@
     <img src="{{Picture}}" alt="picture of trip">
     <a href="/details-profile/{{id}}">Find out more</a>
   </div>
-  <div id="map"></div>
 {{/each}}

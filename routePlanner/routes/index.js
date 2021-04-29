@@ -77,23 +77,10 @@ router.get('/details-profile/:id', (req, res, next) => {
 
 
 //This will get me the data/coordinates from the database
-// router.get('/get-data', (req, res, next) => {
-//   Trip.find()
-//   .then(data => res.json(data))
-// });
-
-// router.get("/apply/:projectID/:webdevID/", (req, res, next) => {
-//   Project.findByIdAndUpdate(req.params.projectID, 
-//       {
-//           "$push": { "applicants": req.params.webdevID },
-//           "$pull": { "rejected": req.params.webdevID }
-//       }, 
-//       {new: true}).then(project => {    
-//       res.redirect(`/webdev/${req.params.webdevID}/myprojects`);
-//   }).catch(err => {
-//       console.log('Error while finding a project by ID during application: ', err);
-//   })
-// });
+router.get('/get-data', (req, res, next) => {
+  Trip.find()
+  .then(data => res.json(data))
+});
 
 module.exports = router;
 
