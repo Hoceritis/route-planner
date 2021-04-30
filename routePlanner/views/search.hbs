@@ -1,13 +1,34 @@
+<head>
+    <link rel="stylesheet" href="/stylesheets/search.css" />
+</head>
+
+<nav>
+  <ul>
+   <li><a href='/signup'>Signup</a></li>
+  <li><a href='/login'>Login</a></li>
+  </ul>
+</nav>
+
 <h1>Search results</h1><br>
 
 {{#each filteredRoute}}
-  <div>
-    <h3>{{title}}</h3>
-    <p>{{Address}}</p>
-    <p>{{Distance}}km</p>
-    <img src="{{Picture}}" alt="picture of trip">
-    <a href="/details/{{id}}">Find out more</a>
+<div class="parent-search">
+    <div class="trips-search">
+      <div class="photo-search">
+          <img src="{{Picture}}" alt="picture of trip">
+      </div>
+      <div class="details-search">        
+        <h3>{{title}}</h3>
+        <p><b>Starting point:</b> {{Address}}</p>
+        <p><b>Length of trip:</b> {{Distance}}km</p>
+        <p class="gap-two"></p>
+        <a href="/details/{{id}}">Find out more</a>
+        <p class="gap-two"></p>
+      </div>
+    </div>
   </div>
-  <div id="map"></div>
+  <p class="gap"></p>
 {{/each}}
-<a href='/'>Back to main page</a><br>
+<div class="back-button">
+  <a href='/'>Back to main page</a>
+</div>
