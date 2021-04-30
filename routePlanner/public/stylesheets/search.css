@@ -29,21 +29,17 @@ li > a {
   color: black;
 } 
 
-/* This is the profile page */
-
-h1, h2{
-  text-align: center;
+img{
+  width: 200px;
 }
 
 h1{
+  font-size: 3rem;
+  text-align: center;
   font-family: 'Reem Kufi', sans-serif;
 }
 
-.photo-overview{
-  margin: 1rem 2rem;
-}
-
-.trips-overview{
+.trips-search{
   background-color: #6A994E;
   padding: 1rem;
   margin: 0 auto;
@@ -53,19 +49,19 @@ h1{
   border-radius: 1rem;
 }
 
-.photo-overview > img{
+.photo-search{
+  margin: 1rem 2rem;
+}
+
+.photo-search > img{
   border: 2px solid #F2E8CF;
 }
 
-img{
-  width: 200px;
-}
-
-.details-overview {
+.details-search {
   margin-left: 2rem;
 }
 
-.details-overview > a {
+.details-search > a {
   background-color: #A7C957;
   padding: 0.5rem 1rem;
   text-decoration: none;
@@ -78,10 +74,38 @@ img{
   background-color: #F2E8CF;
 }
 
+.gap-two{
+  height: 0.1rem;
+  background-color: #6A994E;
+}
+
 a:hover{
   background-color: #BC4749;
 }
 
 a:active{
+  background-color: #692627;
+}
+
+.back-button{
+  display: flex;
+  justify-content: center;
+}
+
+.back-button > a {
+  text-align: center;
+  margin: 0 auto;
+  background-color: #A7C957;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: black;
+  border-radius: 0.2rem;
+}
+
+.back-button > a:hover{
+  background-color: #BC4749;
+}
+
+.back-button > a:active{
   background-color: #692627;
 }
